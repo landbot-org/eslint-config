@@ -1,5 +1,5 @@
 {
-  "name": "@landbot/eslint-config",
+  "name": "@frontends/eslint-config",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
