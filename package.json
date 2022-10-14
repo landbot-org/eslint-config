@@ -9,6 +9,12 @@
   "peerDependencies": {
     "eslint": ">= 8"
   },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
+    "eslint-plugin-react": "^7.31.10"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/landbot-org/eslint-config.git"
