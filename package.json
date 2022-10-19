@@ -1,5 +1,5 @@
 {
-  "name": "@frontends/eslint-config",
+  "name": "@landbot/eslint-config",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.40.0",
-    "eslint": "^8.25.0",
+    "eslint": ">= 8",
     "eslint-plugin-react": "^7.31.10"
   },
   "repository": {
@@ -24,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/landbot-org/eslint-config/issues"
   },
-  "homepage": "https://github.com/landbot-org/eslint-config#readme"
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/landbot-org/eslint-config#readme",
+  "devDependencies": {
+    "@semantic-release/git": "^10.0.1",
+    "semantic-release": "^19.0.5"
+  }
 }
