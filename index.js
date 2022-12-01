@@ -42,5 +42,6 @@ module.exports = {
         ignoreMiddleExtensions: true,
       },
     ],
+    'react/jsx-sort-props': [1],
   },
 };
