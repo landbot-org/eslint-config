@@ -13,7 +13,7 @@ module.exports = {
     },
     ecmaVersion: 'latest',
   },
-  plugins: ['react', '@typescript-eslint', 'jest', 'check-file',],
+  plugins: ['react', '@typescript-eslint', 'jest', 'check-file'],
   settings: {
     react: {
       version: 'detect',
@@ -25,12 +25,22 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
-    "check-file/folder-match-with-fex": [
-      "error",
+    'check-file/folder-match-with-fex': [
+      'error',
       {
-        "*.test.{js,jsx,ts,tsx}":"!**/__tests__/",
-        "*.test.{js,jsx,ts,tsx}":"!**/__test__/",
+        '*.test.{js,jsx,ts,tsx}': '!**/__tests__/',
+        '*.test.{js,jsx,ts,tsx}': '!**/__test__/',
       },
-    ]
+    ],
+    'check-file/filename-naming-convention': [
+      'error',
+      {
+        '**/*.{jsx,tsx}': 'PASCAL_CASE',
+        '**/*.{js,ts}': 'CAMEL_CASE',
+      },
+      {
+        ignoreMiddleExtensions: true,
+      },
+    ],
   },
 };
