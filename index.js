@@ -5,7 +5,18 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:@typescript-eslint/recommended'],
+  extends: [
+    'prettier',
+    'eslint:recommended',
+    'plugin:jest/recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended'
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly'
+  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -13,14 +24,28 @@ module.exports = {
     },
     ecmaVersion: 'latest',
   },
-  plugins: ['react', '@typescript-eslint', 'jest', 'check-file'],
+  plugins: [
+    'jest',
+    'react',
+    'prettier',
+    'check-file',
+    '@typescript-eslint'
+  ],
   settings: {
     react: {
       version: 'detect',
     },
   },
+  ignorePatterns: ['cypress/**/*','webpack*', '*.config.js'],
   rules: {
     '@typescript-eslint/naming-convention': 'error',
+    '@typescript-eslint/no-unused-vars': ['error'],
+    'prettier/prettier': [
+      'error',
+      {
+        'endOfLine': 'auto'
+      }
+    ],
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
