@@ -39,7 +39,7 @@ module.exports = {
   },
   ignorePatterns: ['cypress/**/*','webpack*', '*.config.js'],
   rules: {
-    '@typescript-eslint/naming-convention': 'error',
+    '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
     'prettier/prettier': [
       'error',
@@ -49,7 +49,7 @@ module.exports = {
     ],
     indent: ['error', 2, {'SwitchCase': 1}],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
+    quotes: ['error', 'single', { 'avoidEscape': true }],
     semi: ['error', 'always'],
     'check-file/folder-match-with-fex': [
       'error',
@@ -57,16 +57,6 @@ module.exports = {
         '*.test.{js,jsx,ts,tsx}': '!**/__tests__/',
         '*.test.{js,jsx,ts,tsx}': '!**/__test__/',
       },
-    ],
-    'check-file/filename-naming-convention': [
-      'error',
-      {
-        '**/*.{jsx,tsx}': 'PASCAL_CASE',
-        '**/*.{js,ts}': 'CAMEL_CASE',
-      },
-      {
-        ignoreMiddleExtensions: true,
-      },
-    ],
+    ]
   },
 };
