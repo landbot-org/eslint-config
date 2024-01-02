@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@semantic-release/git": "^10.0.1",
-    "semantic-release": "^19.0.5"
+    "semantic-release": "^22.0.12"
   },
   "publishConfig": {
     "access": "public"
