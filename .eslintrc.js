@@ -7,7 +7,6 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:eslint-comments/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:jest/recommended',
@@ -18,7 +17,7 @@ module.exports = {
   ],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    SharedArrayBuffer: 'readonly',
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -32,9 +31,9 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
     'prettier/prettier': ['error', require('./.prettierrc.js')],
-    indent: ['error', 2, {'SwitchCase': 1}],
+    indent: ['error', 2, { SwitchCase: 1 }],
     'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single', { 'avoidEscape': true }],
+    quotes: ['error', 'single', { avoidEscape: true }],
     semi: ['error', 'always'],
     'check-file/folder-match-with-fex': [
       'error',
@@ -42,12 +41,12 @@ module.exports = {
         '*.test.{js,jsx,ts,tsx}': '!**/__tests__/',
         '*.test.{js,jsx,ts,tsx}': '!**/__test__/',
       },
-    ]
+    ],
   },
   settings: {
     react: {
       version: 'detect',
     },
   },
-  ignorePatterns: ['cypress/**/*','webpack*', '*.config.js'],
+  ignorePatterns: ['cypress/**/*', 'webpack*', '*.config.js'],
 };
