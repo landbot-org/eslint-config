@@ -26,7 +26,7 @@ module.exports = {
     },
     ecmaVersion: 'latest',
   },
-  plugins: ['react', 'import', 'jest', '@typescript-eslint', 'prettier'],
+  plugins: ['check-file', 'react', 'import', 'jest', '@typescript-eslint', 'prettier'],
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
