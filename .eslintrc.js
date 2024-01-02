@@ -48,5 +48,4 @@ module.exports = {
       version: 'detect',
     },
   },
-  ignorePatterns: ['cypress/**/*', 'webpack*', '*.config.js'],
 };
