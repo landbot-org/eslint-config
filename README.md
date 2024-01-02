@@ -8,7 +8,7 @@ npm install --save-dev @landbot/eslint-config-typescript-react
 
 ## Usage
 
-Create a `.eslintrc.js` file in the root of your project:
+Create a `.eslintrc.js` file in the root of your project with the following:
 
 ```js
 module.exports = {
