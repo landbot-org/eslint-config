@@ -6,17 +6,18 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'prettier',
-    'react-app',
     'eslint:recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:jest/recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:prettier/recommended',
-    'plugin:@typescript-eslint/recommended'
   ],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    SharedArrayBuffer: 'readonly',
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -25,38 +26,24 @@ module.exports = {
     },
     ecmaVersion: 'latest',
   },
-  plugins: [
-    'jest',
-    'react',
-    'prettier',
-    'check-file',
-    '@typescript-eslint'
-  ],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
-  ignorePatterns: ['cypress/**/*','webpack*', '*.config.js'],
+  plugins: ['check-file', 'react', 'import', 'jest', '@typescript-eslint', 'prettier'],
   rules: {
-    '@typescript-eslint/no-explicit-any': 'off',
+    'prettier/prettier': ['error', require('./.prettierrc.js')],
+    '@typescript-eslint/no-explicit-any': ['warn'],
     '@typescript-eslint/no-unused-vars': ['error'],
-    'prettier/prettier': [
-      'error',
-      {
-        'endOfLine': 'auto'
-      }
-    ],
-    indent: ['error', 2, {'SwitchCase': 1}],
-    'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single', { 'avoidEscape': true }],
-    semi: ['error', 'always'],
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
     'check-file/folder-match-with-fex': [
       'error',
       {
         '*.test.{js,jsx,ts,tsx}': '!**/__tests__/',
         '*.test.{js,jsx,ts,tsx}': '!**/__test__/',
       },
-    ]
+    ],
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };
