@@ -1,7 +1,7 @@
 name: Build sample project
 
 on:
-  push:
+  pull_request:
     paths:
       - sample/**
 

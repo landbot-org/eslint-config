@@ -6,4 +6,5 @@ module.exports = {
     '^.+\\.[jt]sx?$': 'babel-jest',
   },
   testMatch: ['**/src/**/*.test.+(ts|tsx|js|jsx)'],
+  collectCoverageFrom: ['**/*.{jsx,tsx}', '!**/*.d.{js,jsx,ts,tsx}', '!**/node_modules*/**'],
 };
