@@ -1,5 +1,5 @@
-import { Counter } from '../../../../shared/components/Counter/Counter';
-import { Welcome } from '../../components/Welcome/Welcome';
+import { Counter } from '../../../../shared/components/counter/Counter';
+import { Welcome } from '../../components/welcome/Welcome';
 
 import { StyledHomePage } from './HomePage.styles';
 

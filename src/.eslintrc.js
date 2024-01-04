@@ -26,6 +26,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-unused-vars': 'error',
+    'check-file/folder-naming-convention': ['error', { 'src/**/': 'KEBAB_CASE' }],
     'check-file/folder-match-with-fex': [
       'error',
       {
