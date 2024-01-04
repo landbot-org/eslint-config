@@ -29,9 +29,7 @@
   },
   "files": [
     "index.js",
-    ".eslintignore",
     ".eslintrc.js",
-    ".prettierignore",
     ".prettierrc.js"
   ],
   "scripts": {

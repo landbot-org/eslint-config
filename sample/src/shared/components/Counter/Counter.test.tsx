@@ -9,6 +9,10 @@ describe('Counter', () => {
     render(<Counter />);
 
     expect(screen.getByText('Count is 0')).toBeInTheDocument();
+  });
+
+  it('should increment the counter on click', async () => {
+    render(<Counter />);
 
     await userEvent.click(screen.getByRole('button'));
 
