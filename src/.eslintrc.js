@@ -24,8 +24,8 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'check-file', 'import', 'jest', 'prettier', 'react'],
   rules: {
-    '@typescript-eslint/no-explicit-any': ['warn'],
-    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/no-explicit-any': 'error',
+    '@typescript-eslint/no-unused-vars': 'error',
     'check-file/folder-match-with-fex': [
       'error',
       {
