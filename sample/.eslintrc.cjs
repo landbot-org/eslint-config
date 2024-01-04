@@ -1,5 +1,3 @@
-const { join } = require('path');
-
 module.exports = {
   root: true,
   extends: ['@landbot/typescript-react'],
