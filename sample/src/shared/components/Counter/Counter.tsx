@@ -2,7 +2,7 @@ import { useCounter } from '../../hooks/useCounter';
 
 import { StyledButton, StyledCounter } from './Counter.styles';
 
-function Counter() {
+export function Counter() {
   const { count, increment } = useCounter(0);
 
   return (
@@ -11,5 +11,3 @@ function Counter() {
     </StyledCounter>
   );
 }
-
-export default Counter;

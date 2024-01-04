@@ -1,9 +1,9 @@
-import Counter from '../../../../shared/components/Counter/Counter';
-import Welcome from '../../components/Welcome/Welcome';
+import { Counter } from '../../../../shared/components/Counter/Counter';
+import { Welcome } from '../../components/Welcome/Welcome';
 
 import { StyledHomePage } from './HomePage.styles';
 
-function HomePage() {
+export function HomePage() {
   return (
     <StyledHomePage>
       <Welcome message="Welcome to the Landbot ESLint and Prettier config for React!">
@@ -13,5 +13,3 @@ function HomePage() {
     </StyledHomePage>
   );
 }
-
-export default HomePage;

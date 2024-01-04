@@ -7,18 +7,14 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:jest/recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
   ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-  },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -26,13 +22,10 @@ module.exports = {
     },
     ecmaVersion: 'latest',
   },
-  plugins: ['check-file', 'react', 'import', 'jest', '@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'check-file', 'import', 'jest', 'prettier', 'react'],
   rules: {
-    'prettier/prettier': ['error', require('./.prettierrc.js')],
     '@typescript-eslint/no-explicit-any': ['warn'],
     '@typescript-eslint/no-unused-vars': ['error'],
-    'react/jsx-uses-react': 'off',
-    'react/react-in-jsx-scope': 'off',
     'check-file/folder-match-with-fex': [
       'error',
       {
@@ -40,7 +33,19 @@ module.exports = {
         '*.test.{js,jsx,ts,tsx}': '!**/__test__/',
       },
     ],
+    'import/no-default-export': 'off',
+    'prettier/prettier': ['error', require('./.prettierrc.js')],
+    'react/jsx-uses-react': 'off',
+    'react/react-in-jsx-scope': 'off',
   },
+  overrides: [
+    {
+      files: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.js', 'src/**/*.jsx'],
+      rules: {
+        'import/no-default-export': 'error',
+      },
+    },
+  ],
   settings: {
     react: {
       version: 'detect',

@@ -2,7 +2,7 @@ import { WelcomeProps } from './Welcome.types';
 
 import { StyledWelcome } from './Welcome.styles';
 
-function Welcome({ children, message = 'Welcome!' }: WelcomeProps) {
+export function Welcome({ children, message = 'Welcome!' }: WelcomeProps) {
   return (
     <StyledWelcome>
       <h2>{message}</h2>
@@ -10,5 +10,3 @@ function Welcome({ children, message = 'Welcome!' }: WelcomeProps) {
     </StyledWelcome>
   );
 }
-
-export default Welcome;
