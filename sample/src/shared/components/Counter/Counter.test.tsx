@@ -5,7 +5,7 @@ import { userEvent } from '@testing-library/user-event';
 import { Counter } from './Counter';
 
 describe('Counter', () => {
-  it('Should render', async () => {
+  it('should render', async () => {
     render(<Counter />);
 
     expect(screen.getByText('Count is 0')).toBeInTheDocument();
