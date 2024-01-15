@@ -5,6 +5,7 @@ repos:
       - id: no-commit-to-branch
         args: ["--branch", "main"]
       - id: end-of-file-fixer
+        exclude: \.svg$
       - id: trailing-whitespace
         exclude: \.svg$
   - repo: https://github.com/igorshubovych/markdownlint-cli
