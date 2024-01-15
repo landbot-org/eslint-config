@@ -1,0 +1,19 @@
+{
+  "default": true,
+  "ul-indent": {
+    "indent": 4
+  },
+  "ul-style": {
+    "style": "dash"
+  },
+  "line-length": {
+    "line_length": 120,
+    "code_block_line_length": 120,
+    "tables": false
+  },
+  "no-inline-html": false,
+  "no-duplicate-heading": {
+    "allow_different_nesting": true
+  },
+  "first-line-heading": false
+}
