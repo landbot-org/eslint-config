@@ -19,25 +19,12 @@ practices.
 
 The key is to maintain a clear and organised structure that makes it easy to locate and manage your files.
 
-```text
+```plaintext
 src/
-├── features/       // Grouping features of the application
-│   └── ...         // Other feature folders
-├── shared/         // Shared elements used across multiple features
-│   ├── components/ // Reusable components
-│   ├── services/   // Shared services or API calls
-│   ├── hooks/      // Custom hooks
-│   ├── hoc/        // Higher-order components
-│   ├── slices/     // Redux slices for state management
-│   └── utils/      // Utility functions
-├── assets/         // Storing static assets
-│   ├── images/     // Storing image files
-│   ├── fonts/      // Storing font files
-│   └── ...
-├── styles/         // Global styles
-│   └── ...
-├── App.jsx         // Entry point of the application
-└── ...             // Other necessary files and folders
+├── components/                         // Reusable / shared UI components
+├── containers/                         // Coordinators of components and other abstractions
+├── pages/                              // Entry points of routes
+└── ...
 ```
 
 ### Testing

@@ -1,4 +1,4 @@
-import { HomePage } from './features/home/containers/home-page/HomePage';
+import { HomePage } from './pages/home-page';
 
 export function App() {
   return <HomePage />;
