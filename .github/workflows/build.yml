@@ -10,6 +10,14 @@ defaults:
     working-directory: sample
 
 jobs:
+  pre-commit:
+    name: Pre-commit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - uses: pre-commit/action@v3.0.0
   build:
     name: Build
     runs-on: ubuntu-latest
