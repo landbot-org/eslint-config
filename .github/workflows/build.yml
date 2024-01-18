@@ -2,8 +2,6 @@ name: Build sample project
 
 on:
   pull_request:
-    paths:
-      - sample/**
 
 defaults:
   run:
