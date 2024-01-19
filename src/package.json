@@ -1,6 +1,6 @@
 {
   "name": "@landbot/eslint-config-typescript-react",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "ESLint and Prettier configuration",
   "repository": {
     "type": "git",
