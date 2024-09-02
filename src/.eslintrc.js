@@ -2,54 +2,116 @@ module.exports = {
   env: {
     browser: true,
     commonjs: true,
-    es2021: true,
+    es6: true,
     jest: true,
   },
   extends: [
-    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
     'plugin:jest/recommended',
     'plugin:prettier/recommended',
-    'plugin:react/recommended',
+    'prettier',
     'plugin:react-hooks/recommended',
+  ],
+  globals: {
+    Landbot: false,
+    LandbotFrameWidget: false,
+    LandbotFullpage: false,
+    __dirname: false,
+    process: false,
+  },
+  ignorePatterns: [
+    'src/plugin/*',
+    'babel.config.js',
+    'prettier.config.js',
+    'commitlint.config.js',
+    '.eslintrc.js',
+    'LOCAL_SETTINGS.js',
+  ],
+  overrides: [
+    {
+      files: ['./src/**/*.{ts,tsx}'],
+      rules: {
+        '@typescript-eslint/ban-ts-comment': 'off',
+        '@typescript-eslint/no-empty-interface': [
+          'error',
+          {
+            allowSingleExtends: true,
+          },
+        ],
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-unused-vars': [
+          'error',
+          {
+            argsIgnorePattern: '^_',
+            caughtErrorsIgnorePattern: '^_',
+            varsIgnorePattern: '^_',
+          },
+        ],
+        'no-unused-vars': 'off',
+        'no-undef-init': 'warn',
+      },
+    },
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 'latest',
+    ecmaVersion: 2018,
+    project: './tsconfig.json',
+    sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'check-file', 'import', 'jest', 'prettier', 'react'],
+  plugins: ['react', '@typescript-eslint', 'prettier', 'import', 'jest'],
+  root: true,
   rules: {
-    '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/no-unused-vars': 'error',
-    'check-file/folder-naming-convention': ['error', { 'src/**/': 'KEBAB_CASE' }],
-    'check-file/folder-match-with-fex': [
+    '@typescript-eslint/no-unused-vars': [
       'error',
       {
-        '*.test.{js,jsx,ts,tsx}': '!**/__tests__/',
-        '*.test.{js,jsx,ts,tsx}': '!**/__test__/',
+        argsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
       },
     ],
-    'import/no-default-export': 'off',
-    'prettier/prettier': ['error', require('./.prettierrc.js')],
-    'react/jsx-uses-react': 'off',
-    'react/react-in-jsx-scope': 'off',
-  },
-  overrides: [
-    {
-      files: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.js', 'src/**/*.jsx'],
-      rules: {
-        'import/no-default-export': 'error',
+    'import/no-extraneous-dependencies': 'off',
+    'linebreak-style': 'off',
+    'no-console': 'error',
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          {
+            importNames: ['default', 'pricing'],
+            message:
+              "Please use the context 'usePricingContext' from 'src/context' instead of the instance from 'core/pricing'.",
+            name: 'core/pricing',
+          },
+          {
+            importNames: ['default'],
+            message:
+              "Please use the context 'useSettingsContext' from 'src/context' instead of the instance from 'core/SETTINGS'.",
+            name: 'core/SETTINGS',
+          },
+          {
+            importNames: ['faker'],
+            message: "Please import { faker } from '@faker-js/faker/locale/en' instead due to performance issues",
+            name: '@faker-js/faker',
+          },
+          {
+            message: "Please use more specific import: import format from 'date-fns/format'",
+            name: 'date-fns',
+          },
+        ],
+        patterns: [
+          {
+            group: ['analytics.legacy', './analytics.legacy'],
+            message: "Please import analytics from 'core/analytics' instead",
+          },
+        ],
       },
-    },
-  ],
-  settings: {
-    react: {
-      version: 'detect',
-    },
+    ],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 };

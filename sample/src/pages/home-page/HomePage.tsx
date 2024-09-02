@@ -1,6 +1,5 @@
 import { Counter } from '../../components/counter';
 import { Welcome } from '../../containers/welcome';
-
 import { StyledHomePage } from './HomePage.styles';
 
 export function HomePage() {

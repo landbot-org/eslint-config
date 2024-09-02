@@ -1,5 +1,4 @@
 import { useCounter } from '../../hooks/useCounter';
-
 import { StyledButton, StyledCounter } from './Counter.styles';
 
 export function Counter() {
