@@ -1,6 +1,5 @@
-import { WelcomeProps } from './Welcome.types';
-
 import { StyledWelcome } from './Welcome.styles';
+import { WelcomeProps } from './Welcome.types';
 
 export function Welcome({ children, message = 'Welcome!' }: WelcomeProps) {
   return (
