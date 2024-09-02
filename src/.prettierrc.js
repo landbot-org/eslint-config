@@ -1,8 +1,8 @@
 module.exports = {
-  arrowParens: 'avoid',
+  arrowParens: 'always',
   bracketSpacing: true,
   importOrder: ['^@(.*)$', '^[a-zA-Z]*/(.*)$', '^[./]'],
-  importOrderSeparation: true,
+  importOrderSeparation: false,
   importOrderSortSpecifiers: true,
   plugins: [require.resolve('@trivago/prettier-plugin-sort-imports')],
   printWidth: 120,
