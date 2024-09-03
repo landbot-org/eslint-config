@@ -5,13 +5,7 @@ module.exports = {
     es6: true,
     jest: true,
   },
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'plugin:jest/recommended',
-    'plugin:prettier/recommended',
-    'prettier',
-    'plugin:react-hooks/recommended',
-  ],
+  extends: ['plugin:@typescript-eslint/recommended', 'plugin:jest/recommended', 'plugin:react-hooks/recommended'],
   globals: {
     Landbot: false,
     LandbotFrameWidget: false,
@@ -59,7 +53,7 @@ module.exports = {
     project: './tsconfig.json',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'import', 'jest'],
+  plugins: ['react', '@typescript-eslint', 'import', 'jest'],
   root: true,
   rules: {
     '@typescript-eslint/no-unused-vars': [
@@ -105,12 +99,6 @@ module.exports = {
             message: "Please import analytics from 'core/analytics' instead",
           },
         ],
-      },
-    ],
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
       },
     ],
   },
