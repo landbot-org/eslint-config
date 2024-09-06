@@ -88,10 +88,6 @@ module.exports = {
             message: "Please import { faker } from '@faker-js/faker/locale/en' instead due to performance issues",
             name: '@faker-js/faker',
           },
-          {
-            message: "Please use more specific import: import format from 'date-fns/format'",
-            name: 'date-fns',
-          },
         ],
         patterns: [
           {
