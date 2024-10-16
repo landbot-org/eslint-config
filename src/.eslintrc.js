@@ -53,7 +53,7 @@ module.exports = {
     project: './services/*/tsconfig.json',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'import', 'jest'],
+  plugins: ['react', '@typescript-eslint', 'import', 'jest', 'eslint-plugin-barrel-files'],
   root: true,
   rules: {
     '@typescript-eslint/no-unused-vars': [
@@ -95,6 +95,12 @@ module.exports = {
             message: "Please import analytics from 'core/analytics' instead",
           },
         ],
+      },
+    ],
+    'barrel-files/avoid-barrel-files': [
+      2,
+      {
+        amountOfExportsToConsiderModuleAsBarrel: 50,
       },
     ],
   },
