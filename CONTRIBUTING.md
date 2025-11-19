@@ -1,35 +1,43 @@
 # Contributing
 
-All contributions are welcome. Please, follow the guidelines below to contribute to this project.
+Thank you for your interest in contributing to this project! We welcome all contributions. Please follow the
+guidelines below to ensure a smooth contribution process.
 
-## Pre-requisites
+## Getting Started
 
-### Install pre-commit
+### Prerequisites
 
-This repository uses [pre-commit](https://pre-commit.com/) to run some checks before committing changes. Please, install
-it before making any changes.
+#### Install pre-commit
+
+This repository uses [pre-commit](https://pre-commit.com/) to enforce code quality checks before committing changes.
+Install the pre-commit hooks by running:
 
 ```bash
 pre-commit install
 pre-commit install --hook-type commit-msg
 ```
 
-## Install package dependencies
+This will automatically run linters and formatters on your code before each commit.
 
-Install dependencies:
+### Install Package Dependencies
+
+Navigate to the source directory and install dependencies:
 
 ```bash
 cd src
 npm install
 ```
 
-## Setup sample project
+### Set Up the Sample Project
 
-Install dependencies and local eslint configuration:
+The `sample` directory contains a test project to validate the ESLint and Prettier configuration. To set it up:
 
 ```bash
 cd sample
 npm install
 ```
 
-To update the local eslint configuration, delete the `@landbot` folder from `node_modules` and run `npm install` again.
+**Note:** To update the local ESLint configuration during development, delete the `@landbot` folder from `node_modules`
+and run `npm install` again.
+
+Thank you for contributing!
