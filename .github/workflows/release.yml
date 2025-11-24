@@ -18,6 +18,9 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      id-token: write  # Required for OIDC trusted publishing
+      contents: read   # Required for checkout
     steps:
       - name: "Generate token"
         id: generate_token
@@ -33,17 +36,19 @@ jobs:
           token: ${{ steps.generate_token.outputs.token }}
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
           cache: "npm"
           cache-dependency-path: "**/package-lock.json"
 
+      - name: Update npm
+        run: npm install -g npm@latest
+
       - name: Install dependencies
         run: npm ci
 
       - name: Publish package to NPM
-        run: npx semantic-release
+        run: bash .github/scripts/publish.sh
         env:
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
