@@ -3,7 +3,7 @@
 ## Installation
 
 ```shell
-npm install --save-dev @landbot/eslint-config-typescript-react
+npm i -D @landbot/eslint-config-typescript-react
 ```
 
 ## Usage
@@ -12,13 +12,13 @@ Create a `.eslintrc.js` file in the root of your project with the following:
 
 ```js
 module.exports = {
-  extends: ['@landbot/typescript-react'],
+  extends: ["@landbot/typescript-react"],
 };
 ```
 
-*(Optional)* For the prettier configuration, create a `.prettierrc.js` file in
+_(Optional)_ For the prettier configuration, create a `.prettierrc.js` file in
 the root of your project:
 
 ```js
-module.exports = require('@landbot/eslint-config-typescript-react/prettier-config');
+module.exports = require("@landbot/eslint-config-typescript-react/prettier-config");
 ```
