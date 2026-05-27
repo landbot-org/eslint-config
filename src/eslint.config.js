@@ -143,6 +143,7 @@ module.exports = [
     rules: {
       'react/prop-types': 'off', // Since we use TypeScript for type checking
       'react/react-in-jsx-scope': 'off', // Not needed with React 17+
+      'react/no-danger': 'error',
     },
   },
 
